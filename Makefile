@@ -28,12 +28,12 @@ all: deepmatching
 .cpp.o:  %.cpp %.h
 	$(CC) -o $@ $(CFLAGS) -c $+
 
-#deepmatching: $(HEADERS) $(OBJ)
-#	$(CC) -o $@ $^ $(LDFLAGS) $(LAPACKLDFLAGS)
+deepmatching: $(HEADERS) $(OBJ)
+	$(CC) -o $@ $^ $(LDFLAGS) $(LAPACKLDFLAGS)
 
-deepmatching: $(HEADERS) $(OBJ) 
-	$(CC) -shared -Wl,-soname,libdeepmatching.so.1 -o libdeepmatching.so $(LDFLAGS) $(LAPACKLDFLAGS) $^ 
-#	ar rcs libdeepmatching.a $^
+#deepmatching: $(HEADERS) $(OBJ) 
+#	$(CC) -shared -Wl,-soname,libdeepmatching.so.1 -o libdeepmatching.so $(LDFLAGS) $(LAPACKLDFLAGS) $^ 
+##	ar rcs libdeepmatching.a $^
 #	$(CC) -o $@ -L. -ldeepmatching $(LDFLAGS) $(LAPACKLDFLAGS)
 
 deepmatching-static: $(HEADERS) $(OBJ)
