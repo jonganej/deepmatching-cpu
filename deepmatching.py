@@ -111,7 +111,7 @@ def deepmatching( im1=None, im2=None, options=""):
     The function returns a numpy array with 6 columns, each row being x1 y1 x2 y2 score index.
      (index refers to the local maximum from which the match was retrieved)
     Version 1.2"""
-    if None in (im1.any(),im2.any()):
+    if im1 is None or im2 is None:
       usage_python()
       return
 
